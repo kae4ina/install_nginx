@@ -1,0 +1,42 @@
+- name: Configure Nginx and Firewall - open 80, 22, 443 ports
+  hosts: all
+  become: true
+
+  vars:
+    packs: 
+     - nginx
+     - ufw
+    used_ports:
+      - "80"
+      - "22"
+      - "443" 
+  tasks:
+    - name: Install nginx & ufw
+      apt:
+        pkg: "{{item}}"
+        state: present
+      loop: "{{packs}}"
+     
+    - name: Enable nginx
+      service:
+         name: nginx
+         enabled: yes
+         state: started
+
+    - name: Enable ufw
+      ufw:
+        state: enabled
+
+    - name: Open ports
+      ufw:
+         rule: allow
+         port: "{{item}}"
+      loop: "{{used_ports}}"
+
+    - name: Check status
+      shell: 'ufw status verbose | grep "{{item}}"'
+      register: status_of_used_ports
+      loop: "{{used_ports}}"
+
+    - debug: 
+        var: status_of_used_ports

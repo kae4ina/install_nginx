@@ -1,0 +1,2 @@
+ansible_user: root
+ansible_ssh_privete_key_file: /etc/ssh/ssh_host_ed25519_key
