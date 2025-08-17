@@ -16,5 +16,5 @@ echo "key.pub" >> ~/.ssh/authorized_keys
 
 ### 3. run
  ``` bash
-ansible-playbook play.yaml
+ansible-playbook nginx_fw_conf.yaml
  ``` 
