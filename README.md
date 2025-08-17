@@ -1,4 +1,9 @@
 configure nginx using ansible and open ports 22, 80, 443
+# 🔥 NGINX Configuration with Ansible
+
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)
+![NGINX](https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![SSH](https://img.shields.io/badge/SSH-53A0D2?style=for-the-badge&logo=ssh&logoColor=white)
 
 ### 1. create ssh-keys on control node
  ``` bash
