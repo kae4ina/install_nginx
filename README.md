@@ -1,4 +1,4 @@
-configure nginx using ansible
+configure nginx using ansible and open ports 22, 80, 443
 
 ### 1. create ssh-keys on control node
  ``` bash
